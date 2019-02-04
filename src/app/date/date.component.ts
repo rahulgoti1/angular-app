@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DateComponent implements OnInit {
 
-  constructor() { }
+  dateMessage: string;
+  digit: number = 10;
+
+  constructor() {
+
+    setInterval(() => {
+      let ct = new Date();
+      this.dateMessage = ct.toDateString() + ' ' + ct.toLocaleTimeString();
+    }, 1000);
+
+  }
 
   ngOnInit() {
+  }
+
+  addTwoDigit(a: number, b: number) {
+    return a + b;
   }
 
 }
